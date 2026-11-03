@@ -1,16 +1,9 @@
-// =====================================================
-//  CONFIGURACIÓN (lo único que tenés que tocar)
-// =====================================================
-// Pegá acá la URL que te da Google al "Implementar" el Code.gs
-const SCRIPT_URL = "PEGAR_AQUI_LA_URL_DE_APPS_SCRIPT";
+const SCRIPT_URL = "https://script.google.com/u/0/home/projects/1ELNO_Nk7EwVh5zAgqqqRnAHUmdLpudrSWstLR4cIBSujBis1g2Oq88JC/edit";
 
 // Tienen que ser iguales a los de Code.gs
 const MIN_JUGADORES = 7;
 const MAX_JUGADORES = 15;
 
-// =====================================================
-//  CÓDIGO DE LA PÁGINA
-// =====================================================
 const lista = document.getElementById("lista");
 const contador = document.getElementById("contador");
 const btnAgregar = document.getElementById("agregar");
@@ -22,7 +15,6 @@ document.getElementById("ayudaJug").textContent =
   "Cargá entre " + MIN_JUGADORES + " y " + MAX_JUGADORES +
   " jugadores, con nombre completo y cédula (solo números).";
 
-// Agrega una fila vacía de jugador
 function nuevaFila() {
   const div = document.createElement("div");
   div.className = "jugador";
@@ -40,7 +32,6 @@ function nuevaFila() {
   actualizar();
 }
 
-// Actualiza el contador y los botones
 function actualizar() {
   const n = lista.children.length;
   contador.textContent = n + " de " + MAX_JUGADORES + " jugadores cargados (mínimo " + MIN_JUGADORES + ").";
@@ -56,10 +47,8 @@ btnAgregar.addEventListener("click", function () {
   inputs[inputs.length - 1].focus();
 });
 
-// Arranca con la cantidad mínima de filas
 for (let i = 0; i < MIN_JUGADORES; i++) nuevaFila();
 
-// Validación antes de enviar
 function validar() {
   let ok = true;
   let msg = "";
@@ -99,7 +88,6 @@ function validar() {
   return ok;
 }
 
-// Envío: la página le manda los datos a Google (al Code.gs) y espera la respuesta
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
   if (!validar()) return;
