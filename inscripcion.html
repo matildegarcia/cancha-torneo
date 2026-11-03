@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Misma Pasión - Inscripción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <img class="logo" src="logo.jpg" alt="Misma Pasión">
+</header>
+<div class="cinta"><h1>Inscripción al campeonato</h1></div>
+<div class="llama"></div>
+<p class="intro">Anotá a tu cuadro y a todos sus jugadores en un solo paso. Completá los datos y enviá.</p>
+
+<main>
+  <form id="form" novalidate>
+    <fieldset>
+      <legend>El cuadro</legend>
+      <div class="campo">
+        <label for="equipo">Nombre del cuadro</label>
+        <input type="text" id="equipo" autocomplete="off" maxlength="40" required>
+      </div>
+      <div class="campo">
+        <label for="color">Color de camiseta</label>
+        <input type="text" id="color" maxlength="30" placeholder="Ej: celeste con negro">
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Delegado</legend>
+      <div class="campo">
+        <label for="delegado">Nombre y apellido</label>
+        <input type="text" id="delegado" autocomplete="name" maxlength="60" required>
+      </div>
+      <div class="fila2">
+        <div class="campo">
+          <label for="celular">Celular</label>
+          <input type="tel" id="celular" autocomplete="tel" maxlength="20" placeholder="09X XXX XXX" required>
+        </div>
+        <div class="campo">
+          <label for="mail">Mail</label>
+          <input type="email" id="mail" autocomplete="email" maxlength="80">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Jugadores</legend>
+      <p class="ayuda" id="ayudaJug"></p>
+      <div id="lista"></div>
+      <p class="contador" id="contador"></p>
+      <button type="button" class="agregar" id="agregar">Agregar jugador</button>
+    </fieldset>
+
+    <label class="acepto">
+      <input type="checkbox" id="acepto">
+      <span>Leí y acepto el reglamento del campeonato.</span>
+    </label>
+
+    <p class="error" id="error" role="alert"></p>
+    <button type="submit" class="enviar" id="enviar">Enviar inscripción</button>
+  </form>
+
+  <section id="listo" aria-live="polite">
+    <h2>Inscripción recibida</h2>
+    <p>Tu cuadro quedó anotado. Te vamos a escribir al celular del delegado para confirmar y avisar los próximos pasos.</p>
+    <p>Si algo está mal, escribinos y lo corregimos.</p>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
