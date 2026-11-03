@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/u/0/home/projects/1ELNO_Nk7EwVh5zAgqqqRnAHUmdLpudrSWstLR4cIBSujBis1g2Oq88JC/edit";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx_0NapX-dKJt9en4FXrS4foPO73yiFbITeuzrd_a3kXGR3zN6DQibrlEOCWavbFYIb/exec";
 
 // Tienen que ser iguales a los de Code.gs
 const MIN_JUGADORES = 7;
