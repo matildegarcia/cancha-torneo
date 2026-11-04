@@ -1,4 +1,3 @@
-/* ===== ESTILOS OPTIMIZADOS PARA MÓVILES ===== */
 :root {
   --negro: #111111;
   --naranja: #f28c28;
@@ -60,7 +59,6 @@ legend {
   font-size: 1.15rem !important;
 }
 
-/* Campos de formulario optimizados para tacto en celular */
 .form-control {
   padding: 12px 14px;
   font-size: 1rem;
@@ -78,7 +76,6 @@ fieldset {
   border-radius: 8px;
 }
 
-/* Botón de envío llamativo y cómodo */
 .btn-warning {
   background: linear-gradient(90deg, var(--llama), var(--naranja) 55%, var(--amarillo)) !important;
   border: none !important;
@@ -88,7 +85,6 @@ fieldset {
   border-radius: 8px;
 }
 
-/* JUGADORES DINÁMICOS OPTIMIZADOS */
 .jugador {
   position: relative;
   display: flex;
@@ -112,7 +108,6 @@ fieldset {
   }
 }
 
-/* Botón de quitar discreto en forma de "X" arriba a la derecha */
 .quitar {
   position: absolute;
   top: 10px;
@@ -137,7 +132,6 @@ fieldset {
   color: var(--error);
 }
 
-/* Ocultar el botón de quitar en los primeros 8 jugadores obligatorios */
 .quitar-oculto {
   display: none !important;
 }
