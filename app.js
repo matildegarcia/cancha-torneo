@@ -19,25 +19,36 @@ function nuevaFila() {
   const div = document.createElement("div");
   div.className = "jugador";
   div.innerHTML =
-    '<div><label>Nombre y apellido</label>' +
-    '<input type="text" class="j-nombre" maxlength="60" autocomplete="off"></div>' +
-    '<div><label>Cédula</label>' +
-    '<input type="text" class="j-cedula" inputmode="numeric" maxlength="12" autocomplete="off" placeholder="Sin puntos ni guión"></div>' +
-    '<button type="button" class="quitar" aria-label="Quitar jugador">Quitar</button>';
+    '<div><label class="form-label small fw-semibold text-secondary mb-1">Nombre y apellido</label>' +
+    '<input type="text" class="form-control j-nombre" maxlength="60" autocomplete="off"></div>' +
+    '<div><label class="form-label small fw-semibold text-secondary mb-1">Cédula</label>' +
+    '<input type="text" class="form-control j-cedula" inputmode="numeric" maxlength="12" autocomplete="off" placeholder="Sin puntos ni guión"></div>' +
+    '<button type="button" class="quitar" aria-label="Quitar jugador" title="Quitar jugador">✕</button>';
+  
   div.querySelector(".quitar").addEventListener("click", function () {
     div.remove();
     actualizar();
   });
+  
   lista.appendChild(div);
   actualizar();
 }
 
 function actualizar() {
-  const n = lista.children.length;
+  const filas = Array.from(lista.children);
+  const n = filas.length;
+  
   contador.textContent = n + " de " + MAX_JUGADORES + " jugadores cargados (mínimo " + MIN_JUGADORES + ").";
   btnAgregar.disabled = n >= MAX_JUGADORES;
-  lista.querySelectorAll(".quitar").forEach(function (b) {
-    b.style.visibility = n <= 1 ? "hidden" : "visible";
+  
+  // Ocultar la "✕" de quitar en los primeros 8 jugadores obligatorios (índices 0 a 7)
+  filas.forEach(function (f, index) {
+    const btnQuitar = f.querySelector(".quitar");
+    if (index < MIN_JUGADORES || n <= MIN_JUGADORES) {
+      btnQuitar.classList.add("quitar-oculto");
+    } else {
+      btnQuitar.classList.remove("quitar-oculto");
+    }
   });
 }
 

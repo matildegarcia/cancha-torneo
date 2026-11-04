@@ -1,3 +1,4 @@
+/* ===== ESTILOS OPTIMIZADOS PARA MÓVILES ===== */
 :root {
   --negro: #111111;
   --naranja: #f28c28;
@@ -59,6 +60,7 @@ legend {
   font-size: 1.15rem !important;
 }
 
+/* Campos de formulario optimizados para tacto en celular */
 .form-control {
   padding: 12px 14px;
   font-size: 1rem;
@@ -76,6 +78,7 @@ fieldset {
   border-radius: 8px;
 }
 
+/* Botón de envío llamativo y cómodo */
 .btn-warning {
   background: linear-gradient(90deg, var(--llama), var(--naranja) 55%, var(--amarillo)) !important;
   border: none !important;
@@ -85,7 +88,9 @@ fieldset {
   border-radius: 8px;
 }
 
+/* JUGADORES DINÁMICOS OPTIMIZADOS */
 .jugador {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -99,40 +104,42 @@ fieldset {
 @media (min-width: 576px) {
   .jugador {
     display: grid;
-    grid-template-columns: 1.6fr 1fr auto;
+    grid-template-columns: 1.6fr 1fr;
     align-items: end;
-    gap: 10px;
-    padding: 10px 0;
-    background: transparent;
-    border: none;
-    border-top: 1px dashed var(--borde);
-    border-radius: 0;
+    gap: 12px;
+    padding: 14px;
+    background: var(--blanco);
   }
-  .jugador:first-child { border-top: 0; }
 }
 
+/* Botón de quitar discreto en forma de "X" arriba a la derecha */
 .quitar {
-  font: inherit;
-  background: #fff0f0;
-  border: 1px solid #ffcdd2;
-  border-radius: 6px;
-  padding: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: var(--gris);
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.quitar:hover {
+  background: #ffebee;
   color: var(--error);
-  font-weight: 600;
-  text-align: center;
-  width: 100%;
 }
 
-@media (min-width: 576px) {
-  .quitar {
-    width: auto;
-    padding: 10px 14px;
-  }
-}
-
-.quitar:hover { 
-  background: var(--error);
-  color: var(--blanco); 
+/* Ocultar el botón de quitar en los primeros 8 jugadores obligatorios */
+.quitar-oculto {
+  display: none !important;
 }
 
 .invalido { 
