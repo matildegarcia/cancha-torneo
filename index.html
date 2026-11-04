@@ -13,9 +13,9 @@
 </head>
 <body class="bg-white text-dark">
 
-<div class="container" style="max-width: 680px;">
+<div class="container px-2" style="max-width: 680px;">
   <header class="brand-header px-0">
-    <div class="row align-items-center g-3">
+    <div class="row align-items-center g-2">
       <div class="col-8 col-sm-9">
         <div class="cinta">
           <h1>Inscripción torneo Amateur</h1>
@@ -28,13 +28,13 @@
     </div>
   </header>
 
-  <p class="intro text-secondary mt-3">Anotá a tu cuadro y a todos sus jugadores en un solo paso. Completá los datos y enviá.</p>
+  <p class="intro text-secondary mt-2 px-1 small">Anotá a tu cuadro y a todos sus jugadores en un solo paso. Completá los datos y enviá.</p>
 </div>
 
-<main class="container py-3 pb-5" style="max-width: 680px;">
+<main class="container px-2 py-2 pb-5" style="max-width: 680px;">
   <form id="form" novalidate class="mt-2">
     
-    <fieldset class="border border-dark rounded p-3 p-md-4 mb-4">
+    <fieldset class="border border-dark rounded p-3 mb-3">
       <legend class="float-none w-auto px-3 py-1 bg-dark text-white fw-bold fs-5 border-start border-4 border-warning">El cuadro</legend>
       
       <div class="mb-3">
@@ -53,7 +53,7 @@
       </div>
     </fieldset>
 
-    <fieldset class="border border-dark rounded p-3 p-md-4 mb-4">
+    <fieldset class="border border-dark rounded p-3 mb-3">
       <legend class="float-none w-auto px-3 py-1 bg-dark text-white fw-bold fs-5 border-start border-4 border-warning">Delegado</legend>
       
       <div class="mb-3">
@@ -61,72 +61,74 @@
         <input type="text" id="delegado" class="form-control" autocomplete="name" maxlength="60" required>
       </div>
       
-      <div class="row g-3">
-        <div class="col-md-6 mb-3">
-          <label for="celular" class="form-label fw-semibold">Celular</label>
-          <input type="tel" id="celular" class="form-control" autocomplete="tel" maxlength="20" placeholder="09X XXX XXX" required>
-        </div>
-        <div class="col-md-6 mb-3">
-          <label for="mail" class="form-label fw-semibold">Mail</label>
-          <input type="email" id="mail" class="form-control" autocomplete="email" maxlength="80">
-        </div>
+      <div class="mb-3">
+        <label for="celular" class="form-label fw-semibold">Celular</label>
+        <input type="tel" id="celular" inputmode="tel" class="form-control" autocomplete="tel" maxlength="20" placeholder="09X XXX XXX" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="mail" class="form-label fw-semibold">Mail <span class="text-muted fw-normal">(Opcional)</span></label>
+        <input type="email" id="mail" class="form-control" autocomplete="email" maxlength="80">
       </div>
     </fieldset>
 
-    <fieldset class="border border-dark rounded p-3 p-md-4 mb-4">
+    <fieldset class="border border-dark rounded p-3 mb-3">
       <legend class="float-none w-auto px-3 py-1 bg-dark text-white fw-bold fs-5 border-start border-4 border-warning">Jugadores</legend>
-      <p class="text-secondary small mb-3" id="ayudaJug"></p>
+      <p class="text-secondary small mb-2" id="ayudaJug"></p>
+      
       <div id="lista"></div>
+      
       <p class="text-secondary small mt-2 mb-3" id="contador"></p>
-      <button type="button" class="btn btn-outline-dark fw-semibold mb-2" id="agregar">Agregar jugador</button>
+      <button type="button" class="btn btn-outline-dark fw-semibold w-100 py-2" id="agregar">+ Agregar jugador</button>
     </fieldset>
 
-<div class="form-check mb-4">
-  <input class="form-check-input border-dark" type="checkbox" id="acepto" required>
-  <label class="form-check-label fw-medium text-dark" for="acepto">
-    Leí y acepto el <a href="#" data-bs-toggle="modal" data-bs-target="#modalReglamento" class="text-dark fw-bold text-decoration-underline">reglamento del campeonato</a> (Atención: una vez enviada la inscripción no se permiten cambios ni modificaciones de jugadores).
-  </label>
-</div>
+    <div class="form-check mb-4 px-2">
+      <input class="form-check-input border-dark p-2" type="checkbox" id="acepto" required style="transform: scale(1.2); margin-right: 8px;">
+      <label class="form-check-label fw-medium text-dark small" for="acepto">
+        Leí y acepto el <a href="#" data-bs-toggle="modal" data-bs-target="#modalReglamento" class="text-dark fw-bold text-decoration-underline">reglamento del campeonato</a> (Atención: una vez enviada la inscripción no se permiten cambios).
+      </label>
+    </div>
 
-<div class="modal fade" id="modalReglamento" tabindex="dal" aria-labelledby="modalReglamentoLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header bg-dark text-white">
-        <h5 class="modal-title fw-bold" id="modalReglamentoLabel">Reglamento y Condiciones de Inscripción</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body text-start">
-        <h6 class="fw-bold text-dark">1. Plantel de Jugadores</h6>
-        <p class="text-secondary small">El equipo inscribe la lista de buena fe definitiva en este formulario. <strong>Una vez finalizada y enviada la inscripción, no se permitirán modificaciones, altas, bajas ni cambios de jugadores</strong> bajo ningún concepto.</p>
-        
-        <h6 class="fw-bold text-dark">2. Responsabilidad del Delegado</h6>
-        <p class="text-secondary small">El delegado firmante es el único responsable de chequear que los datos de los jugadores y sus números de contacto sean correctos.</p>
-        
-        <h6 class="fw-bold text-dark">3. Comunicación</h6>
-        <p class="text-secondary small">Cualquier aviso se realizará a través del celular de contacto provisto en la inscripción.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-dark w-100 fw-bold" data-bs-dismiss="modal">Entendido</button>
+    <!-- Modal Reglamento -->
+    <div class="modal fade" id="modalReglamento" tabindex="-1" aria-labelledby="modalReglamentoLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-dark text-white">
+            <h5 class="modal-title fw-bold fs-6" id="modalReglamentoLabel">Reglamento y Condiciones</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body text-start small">
+            <h6 class="fw-bold text-dark">1. Plantel de Jugadores</h6>
+            <p class="text-secondary">El equipo inscribe la lista de buena fe en este formulario. <strong>Una vez comenzado el campeonato, no se permitirán modificaciones</strong> bajo ningún concepto.</p>
+            
+            <h6 class="fw-bold text-dark">2. Responsabilidad del Delegado</h6>
+            <p class="text-secondary">El delegado firmante es el único responsable de chequear que los datos y números sean correctos.</p>
+            
+            <h6 class="fw-bold text-dark">3. Comunicación</h6>
+            <p class="text-secondary mb-0">Cualquier aviso se realizará a través del celular de contacto provisto.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark w-100 fw-bold py-2" data-bs-dismiss="modal">Entendido</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-    <p class="text-danger fw-semibold mb-3" id="error" role="alert"></p>
-    <button type="submit" class="btn btn-warning fw-bold fs-5 w-100 py-3 text-dark shadow-sm" id="enviar">Enviar inscripción</button>
+    <p class="text-danger fw-semibold mb-3 small" id="error" role="alert"></p>
+    <button type="submit" class="btn btn-warning fw-bold w-100 py-3 shadow-sm" id="enviar">Enviar inscripción</button>
   </form>
 
-  <section id="listo" class="border border-dark border-start border-5 border-warning rounded p-4 bg-light mt-4" aria-live="polite" style="display: none;">
-    <h2 class="h3 fw-bold mb-2">Inscripción recibida</h2>
-    <p class="mb-2">Tu cuadro quedó anotado. Te vamos a escribir al celular del delegado para confirmar y avisar los próximos pasos.</p>
-    <p class="mb-0">Si algo está mal, escribinos y lo corregimos.</p>
+  <section id="listo" class="border border-dark border-start border-5 border-warning rounded p-3 bg-light mt-3" aria-live="polite" style="display: none;">
+    <h2 class="h4 fw-bold mb-2">Inscripción recibida</h2>
+    <p class="small mb-2">Tu cuadro quedó anotado. Te vamos a escribir al celular del delegado para confirmar y avisar los próximos pasos.</p>
+    <p class="small mb-0">Si algo está mal, escribinos y lo corregimos.</p>
   </section>
 </main>
 
 <footer class="bg-dark text-white text-center py-4 mt-auto">
   <div class="container">
-    <p class="mb-1"><strong>Celular:</strong> 098 776 272</p>
-    <p class="mb-0"><strong>Instagram:</strong> <a href="https://instagram.com/canchamismapasion" target="_blank" rel="noopener" class="text-warning text-decoration-none">@canchamismapasion</a></p>
+    <p class="mb-1 small"><strong>Celular:</strong> 098 776 272</p>
+    <p class="mb-0 small"><strong>Instagram:</strong> <a href="https://instagram.com/canchamismapasion" target="_blank" rel="noopener" class="text-warning text-decoration-none">@canchamismapasion</a></p>
   </div>
 </footer>
 

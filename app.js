@@ -1,7 +1,7 @@
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx_0NapX-dKJt9en4FXrS4foPO73yiFbITeuzrd_a3kXGR3zN6DQibrlEOCWavbFYIb/exec";
 
 // Tienen que ser iguales a los de Code.gs
-const MIN_JUGADORES = 7;
+const MIN_JUGADORES = 8;
 const MAX_JUGADORES = 15;
 
 const lista = document.getElementById("lista");

@@ -1,6 +1,6 @@
 // ===== CONFIGURACIÓN =====
 const MAX_EQUIPOS = 16;      // cupo máximo de cuadros
-const MIN_JUGADORES = 7;     // mínimo de jugadores por cuadro
+const MIN_JUGADORES = 8;     // mínimo de jugadores por cuadro
 const MAX_JUGADORES = 15;    // máximo de jugadores por cuadro
 
 // ===== RECIBE LA INSCRIPCIÓN =====
